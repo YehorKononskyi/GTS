@@ -1,0 +1,25 @@
+/* GTS INTERNATIONAL — Radii, shadows, glows, spacing */
+
+:root {
+  /* Corner radii — verbatim from the file (do not snap to 4/8px grid) */
+  --radius-sm: 3.2px;
+  --radius-md: 5px;
+
+  /* Orange glow used on active/hover accents */
+  --glow-orange: 0 0 4px rgba(255, 96, 34, 0.5);
+  --glow-orange-lg: 0 0 24px rgba(255, 96, 34, 0.35);
+
+  /* Elevation */
+  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.45);
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+}

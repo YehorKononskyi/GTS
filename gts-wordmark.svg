@@ -1,0 +1,34 @@
+/* GTS INTERNATIONAL — Color tokens
+   Base palette extracted verbatim from GTS_LANDING_DRAFT.fig Variables.
+   See also components/graphics/fig-tokens.css (raw Figma export). */
+
+:root {
+  /* --- Brand core --- */
+  --gts-orange: #FF6022;          /* accent-orange — primary brand accent */
+  --gts-purple: #5614B8;          /* accent-purple — secondary brand accent */
+  --gts-black: #000000;           /* basic-black */
+  --gts-white: #FFFFFF;           /* basic-white */
+  --gts-additional: #7C7C7C;      /* additional — muted grey */
+
+  /* --- Deep backgrounds (read from hero/section fills) --- */
+  --gts-bg: #160903;              /* page base — near-black warm brown */
+  --gts-bg-purple-deep: #150B24;  /* card gradient origin — deep violet */
+
+  /* --- Neutral text ramp --- */
+  --gts-text: #FFFFFF;
+  --gts-text-dim: #B4B4B4;        /* dimmed body / captions */
+  --gts-text-muted: #7C7C7C;
+
+  /* --- Hairlines / strokes --- */
+  --gts-hairline: rgba(255, 255, 255, 0.30);
+  --gts-hairline-soft: rgba(255, 255, 255, 0.12);
+
+  /* --- Semantic aliases --- */
+  --surface-page: var(--gts-bg);
+  --surface-card: var(--gts-bg-purple-deep);
+  --text-body: var(--gts-text);
+  --text-secondary: var(--gts-text-dim);
+  --accent: var(--gts-orange);
+  --accent-2: var(--gts-purple);
+  --border-hairline: var(--gts-hairline);
+}

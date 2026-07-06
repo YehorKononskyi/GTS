@@ -1,0 +1,22 @@
+/* GTS INTERNATIONAL — Gradients
+   The signature GTS motif: orange→purple sweep, plus deep-violet card wash. */
+
+:root {
+  /* Primary brand gradient — orange to purple, left→right */
+  --grad-brand: linear-gradient(90deg, #FF6022 0%, #5614B8 100%); /* @kind color */
+
+  /* Same sweep for text (background-clip: text) */
+  --grad-brand-text: linear-gradient(90deg, #FF6022 0%, #5614B8 100%); /* @kind color */
+
+  /* Radial hero glow — orange bloom fading into the page base */
+  --grad-hero-glow: radial-gradient(60% 60% at 50% 40%,
+      rgba(255, 96, 34, 0.35) 0%,
+      rgba(86, 20, 184, 0.12) 45%,
+      rgba(22, 9, 3, 0) 80%); /* @kind color */
+
+  /* Card surface wash — deep violet edge dissolving into warm black */
+  --grad-card: linear-gradient(85deg, #150B24 -2%, rgba(21, 11, 36, 0) 100%), #160903; /* @kind color */
+
+  /* Subtle top-down section fade used to protect content over imagery */
+  --grad-protect: linear-gradient(180deg, rgba(22, 9, 3, 0) 0%, #160903 100%); /* @kind color */
+}

@@ -1,0 +1,72 @@
+# GTS International — Design System
+
+A hi-tech, dark-mode brand system extracted from **GTS_LANDING_DRAFT.fig**. GTS International presents as a Swiss provider of sovereign AI compute / infrastructure. This system captures the file's colors, gradients, typography, iconography, decorative graphics and a landing-page UI kit so designers can build on-brand GTS surfaces.
+
+> **Source of truth:** `GTS_LANDING_DRAFT.fig` (mounted read-only during import). All token values, icons and graphics are extracted verbatim from that file — values win over any public brand references.
+
+## Company context
+- **Brand:** GTS INTERNATIONAL — positioned around sovereign AI infrastructure / compute, built in Switzerland.
+- **Mood:** dark, cinematic, high-tech. Deep near-black backgrounds, an orange→purple signature gradient, glowing accents, isometric/architectural graphics and satellite/chip iconography.
+- The Figma file ships **two art directions** for the hero (V_1 and V_2) — see "Alt art direction" below.
+
+## Brand assets
+- `assets/logo/gts-logo-color.png` — **primary** color lockup: "GTS INTERNATIONAL" wordmark with the orange→violet gradient generative sweep (transparent PNG, 933×654).
+- `assets/logo/gts-logo-mono.png` / `gts-logo-mono-full.png` — white monochrome lockups (transparent PNG) for dark surfaces.
+- `assets/logo/gts-logo-mono.svg` — vector monochrome "GTS INTERNATIONAL" lockup with the swoosh mark.
+- `assets/logo/gts-wordmark.svg` — GTS wordmark (extracted from the file).
+- `assets/graphics/graphic-1-sweep.svg`, `graphic-2-bowtie.svg`, `graphic-3-lens.svg` — generative string-art brand motifs (white line art; use on dark surfaces as hero/section accents).
+- `assets/brand-icon-sheet.svg` — reference sheet of the brand's rounded-tile icon set.
+- `assets/logo/gtsi-logo-colors.png` — colored logo lockup.
+- `assets/images/hero-v1.png`, `hero-v2.jpg` — hero backdrops (two directions).
+- `assets/images/bg-city-lights.png`, `bg-light-trails.png` — section background textures.
+- `assets/icons-misc/` — ring, scroll-arrow, flag-usa incidental SVGs.
+
+> **Logo note:** the canonical mark is the **color lockup** (`gts-logo-color.png`) — white wordmark with the orange→violet gradient sweep on transparent. Monochrome white versions (`gts-logo-mono.png`/`.svg`) are for dark or single-color contexts. All are transparent PNG/SVG; use the color lockup on dark surfaces as the default..
+
+## Components (built)
+Reusable primitives live in `components/`:
+- **Icon** (`components/icons/`) — 22-glyph hi-tech line-icon set (chips, satellites, servers, molecules, scopes, hexes, numerals). Data-driven via `icon-data.js`.
+- **Cubes** (`components/graphics/`) — decorative isometric cube-array SVG.
+- **Scheme** (`components/graphics/`) — technical network/architecture diagram SVG.
+- **Ity** (`components/graphics/`) — city / skyline decorative SVG (layer name "City").
+
+The source file is landing-page-focused: its component families are this icon set plus these decorative graphic instances. No form/control component families (Button, Input, …) are defined in the file, so none are invented here.
+
+## CONTENT FUNDAMENTALS
+- **Voice:** confident, institutional, technical. Speaks to sovereignty, security, scale and Swiss reliability.
+- **Person:** third-person / brand-first ("GTS International builds…"), addressing the reader as "you" in CTAs.
+- **Casing:** sentence case for body and most headings; UPPERCASE with wide tracking (+0.08em) reserved for small labels/eyebrows and the wordmark.
+- **Tone:** no emoji, no exclamation. Short, declarative headline fragments ("Sovereign AI infrastructure") paired with a calm explanatory sentence.
+- **Numerals & tech terms** are embraced (compute, infrastructure, sovereign) — the brand leans into engineering credibility rather than consumer softness.
+
+## VISUAL FOUNDATIONS
+- **Color:** warm near-black page base `#160903`; deep-violet card base `#150B24`. Two brand accents — **orange `#FF6022`** and **purple `#5614B8`** — plus a grey `#7C7C7C`. Text is white with a `#B4B4B4` dim tier.
+- **Gradients (the signature motif):** orange→purple linear sweep (`--grad-brand`, 90°); a radial orange hero glow (`--grad-hero-glow`); and a deep-violet card wash (`--grad-card`, `linear-gradient(85deg, #150B24 -2%, transparent) + #160903`). Used on hero backdrops, headline text fills, and card surfaces.
+- **Type:** display/headings in **Gilroy** (geometric sans, self-hosted, weights 100–900 + italics), body in **Verdana**. Headings are bold/extrabold with −0.02em tracking; body at 16px / 1.5.
+- **Radii:** small `3.2px`, medium `5px` — do not snap to a 4/8px grid, these are the file's exact values.
+- **Borders:** thin hairlines in `rgba(255,255,255,.30)` (soft variant `.12`) define cards and dividers over dark surfaces.
+- **Shadow & glow:** ambient card shadow `0 8px 40px rgba(0,0,0,.45)`; accent **orange glow** `0 0 4px rgba(255,96,34,.5)` (large `0 0 24px …/.35`) on active/hover accents.
+- **Backgrounds:** full-bleed dark imagery (city lights, light trails) behind top-down protection gradients so text stays legible.
+- **Layout:** generous vertical rhythm, centered hero, wide max-widths. Decorative SVG graphics (Cubes/Scheme/City) sit as section accents, not content.
+- **Motion:** subtle — fades and soft glows; no bounces. Hover = brighten / add orange glow; press = slight darken.
+
+## ICONOGRAPHY
+- The file defines a **custom hi-tech line-icon set** (22 glyphs) — satellites, chips, servers, molecules, scopes, hexagons, laser/signal marks and numerals. These ship as `components/icons/icon-data.js` and render via the `Icon` component; they inherit `currentColor` (brand orange by default).
+- A few incidental SVGs (a ring, a scroll-down arrow, a USA flag) live in `assets/icons-misc/`.
+- **No icon font** and **no emoji** are used. Prefer the Icon set for all technical marks; use the decorative graphics (Cubes/Scheme/City) for large section art.
+
+## Alt art direction (V_2)
+The Figma file's second hero variant (V_2) swaps `hero-v1.png` for `hero-v2.jpg` and uses a different decorative arrangement. Both hero images are copied in; treat V_2 as an alternate backdrop, same token system.
+
+## Fonts
+**Gilroy** (the display family) is now **self-hosted** from the uploaded `.ttf` files under `fonts/` — all weights (100–900, incl. Heavy at 850) with matching italics, wired via `@font-face` in `tokens/fonts.css`. **Verdana** (body) is a system font and needs nothing.
+
+## Index / manifest
+- `styles.css` — root stylesheet; `@import`s all tokens + fonts (link this one file).
+- `tokens/` — `colors.css`, `gradients.css`, `typography.css`, `fonts.css`, `effects.css`.
+- `components/icons/` — `Icon` component, `icon-data.js`, card.
+- `components/graphics/` — `Cubes`, `Scheme`, `Ity` components + `fig-tokens.css` (raw Figma variables), `fig-typography.css`.
+- `guidelines/` — foundation specimen cards (colors, gradients, type, effects).
+- `ui_kits/landing/` — landing-page recreation.
+- `assets/` — logos, images, misc icons.
+- `SKILL.md` — Agent-Skills entry point.
